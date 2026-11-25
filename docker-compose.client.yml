@@ -1,0 +1,14 @@
+services:
+  react-client:
+    build: ./react-client
+    container_name: ai-react-client
+    ports:
+      - "3000:80"
+    networks:
+      - ai-stack-net
+    restart: unless-stopped
+
+networks:
+  ai-stack-net:
+    external: true
+    name: ai-cpu-stack_default
